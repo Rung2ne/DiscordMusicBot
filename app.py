@@ -113,8 +113,9 @@ def build_ffmpeg_options(volume: float, speed: float, pitch: float, bassboost: b
     if seek_seconds > 0:
         before_opts += f" -ss {seek_seconds}"
 
-    opts = f'-vn -ar 48000 -ac 2 -b:a 192k -filter:a "{filter_str}"'
+    opts = f'-vn -filter:a "{filter_str}"'
     return before_opts, opts
+
 
 
 class GuildMusicState:
